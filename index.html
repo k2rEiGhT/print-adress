@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>長形3号封筒 宛名印刷システム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <h1>長形3号封筒 宛名印刷</h1>
+    
+    <div class="container">
+        <div class="input-section">
+            <h2>入力フォーム</h2>
+            
+            <div class="form-group">
+                <label for="postalCode">郵便番号:</label>
+                <input type="text" id="postalCode" placeholder="000-0000" maxlength="8">
+            </div>
+            
+            <div class="form-group">
+                <label for="address">住所:</label>
+                <input type="text" id="address" placeholder="大阪府大阪市○○○○1-2-3">
+            </div>
+            
+            <div class="form-group">
+                <label for="address2">建物名・部屋番号:</label>
+                <input type="text" id="address2" placeholder="○○マンション101号室">
+            </div>
+
+            <div class="form-group">
+                <label for="company">会社名・部署名など:</label>
+                <input type="text" id="company" placeholder="○○株式会社 ○○部">
+            </div>
+            
+            <div class="form-group">
+                <label for="recipient">宛名（個人名）:</label>
+                <input type="text" id="recipient" placeholder="山田太郎">
+            </div>
+            
+            <div class="form-group">
+                <label>敬称:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="honorific" value="様" checked>
+                        様
+                    </label>
+                    <label>
+                        <input type="radio" name="honorific" value="御中">
+                        御中
+                    </label>
+                    <label>
+                        <input type="radio" name="honorific" value="殿">
+                        殿
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>特殊取扱:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="specialService" value="" checked>
+                        なし
+                    </label>
+                    <label>
+                        <input type="radio" name="specialService" value="特定記録">
+                        特定記録
+                    </label>
+                    <label>
+                        <input type="radio" name="specialService" value="簡易書留">
+                        簡易書留
+                    </label>
+                </div>
+            </div>
+            
+            <button class="print-button" onclick="printEnvelope()">印刷</button>
+        </div>
+        
+        <div class="preview-section">
+            <h2>印刷プレビュー</h2>
+            
+            <div class="envelope">
+                <div class="postal-code" id="previewPostalCode">〒</div>
+                <div class="address" id="previewAddress"></div>
+                <div class="address2" id="previewAddress2"></div>
+                <div class="company" id="previewCompany"></div> <div class="recipient" id="previewRecipient"></div>
+                <div class="special-service" id="previewSpecialService"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
